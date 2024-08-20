@@ -52,7 +52,7 @@ export const Category = ({ Category, categoryIndex }) => {
                 &times;
               </button>
               <h4 className='text-md'>{widget.name}</h4>
-              {widget.Data ? (
+              {widget.Data && widget.Data.length > 0? (
                 <>
                   <PieChart
                     series={[
@@ -69,18 +69,22 @@ export const Category = ({ Category, categoryIndex }) => {
                       },
                     ]}
                   />
-                  <div className='absolute  mt-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
-                    <span className='text-lg mr-48 font-bold'>
-                      {widget.Data.reduce((total, item) => total + item.value, 0)}
-                    </span>
-                    <span className='text-sm mr-48 font-medium block'>Total</span>
-                  </div>
+                  
+  <div className='absolute mt-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
+    <span className='text-lg mr-48 font-bold'>
+      {widget.Data.reduce((total, item) => total + item.value, 0)}
+    </span>
+    <span className='text-sm mr-48 font-medium block'>Total</span>
+  </div>
+
                 </>
               ) : (
-                <div className='border border-gray-200 rounded-lg'>
-                  <span className='mr-4'>
+                <div className=' rounded-lg'>
+                  <span className="flex justify-center mb-4">
                     <img src={graph} alt="No Graph" />
                   </span>
+                  <h4 >No Graph Available
+                  </h4>
                 </div>
               )}
             </div>
