@@ -1,12 +1,16 @@
-import { Dashboard } from "./component/Dashboard"
-import Navbar from "./component/Navbar"
+import React, { useState } from 'react';
+import { Dashboard } from "./component/Dashboard";
+import Navbar from "./component/Navbar";
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <>
-      <Navbar />
-      <Dashboard />
+      <Navbar onSearch={setSearchTerm} />
+      <Dashboard searchTerm={searchTerm} />
     </>
-  )
+  );
 }
-export default App
+
+export default App;

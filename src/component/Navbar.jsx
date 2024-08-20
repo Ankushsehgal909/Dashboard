@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (e) => {
+    const term = e.target.value;
+    setSearchTerm(term);
+    onSearch(term);  // Pass the search term to the parent component (Dashboard)
+  };
+
   return (
     <nav className="bg-white border-blue-200 dark:bg-blue-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-center ml-96 p-2">
-        <div className="relative flex mx-24 hidden md:block w-96"> {/* Increased width */}
+        <div className="relative flex mx-24 hidden md:block w-96">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
               className="w-5 h-5 text-gray-500 dark:text-gray-400"
@@ -26,12 +34,14 @@ const Navbar = () => {
           <input
             type="text"
             id="search-navbar"
+            value={searchTerm}
+            onChange={handleSearchChange}
             className="block w-full p-2 pl-10 text-sm text-gray-900 border border-blue-300 rounded-md bg-blue-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Search anything..."
           />
         </div>
-        <div className="flex items-center space-x-4 md:space-x-6 ml-4"> {/* Icon section */}
-          <button className=" text-gray-500 dark:text-gray-400">
+        <div className="flex items-center space-x-4 md:space-x-6 ml-4">
+          <button className="text-gray-500 dark:text-gray-400">
             <svg
               className="w-6 h-6"
               fill="none"
