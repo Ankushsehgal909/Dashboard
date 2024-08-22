@@ -71,10 +71,10 @@ export const Category = ({ Category, categoryIndex }) => {
                   />
                   
   <div className='absolute mt-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
-    <span className='text-lg mr-48 font-bold'>
+    <span className='text-lg mr-36 font-bold'>
       {widget.Data.reduce((total, item) => total + item.value, 0)}
     </span>
-    <span className='text-sm mr-48 font-medium block'>Total</span>
+    <span className='text-sm mr-36 font-medium block'>Total</span>
   </div>
 
                 </>
