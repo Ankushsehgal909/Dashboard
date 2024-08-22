@@ -1,6 +1,9 @@
 # Dashboard
 
 This project is a modern web application built using the React and Tailwind CSS for styling. The application serves as a dynamic platform for [purpose or functionality, e.g., e-commerce, educational, social networking] with features like [list key features, e.g., real-time data updates]. It leverages Vite for fast and optimized development, ensuring a smooth developer experience with hot module replacement (HMR) and quick builds. The project is structured to be easily scalable and maintainable, with a focus on clean code practices and modular architecture.
+# Live Link
+https://asg-dashboard.netlify.app/
+
 ## Installation
 
 Follow these steps to set up the project locally on your machine:
